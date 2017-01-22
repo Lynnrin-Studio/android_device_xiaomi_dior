@@ -70,8 +70,15 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_DISABLE_INIT_BLANK :=true
 WITH_LINEAGE_CHARGER := false
 
-# dex-preopt
-WITH_DEXPREOPT := false
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024

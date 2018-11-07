@@ -19,6 +19,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi 280dpi hdpi tvdpi mdpi ldpi
@@ -30,9 +32,6 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_SHIPPING_API_LEVEL := 19
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
-
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
 
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk

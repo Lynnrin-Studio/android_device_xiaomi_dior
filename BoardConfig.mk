@@ -70,7 +70,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_DISABLE_INIT_BLANK :=true
-WITH_LINEAGE_CHARGER := false
 
 # Dex
 ifeq ($(HOST_OS),linux)

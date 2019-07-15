@@ -30,6 +30,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0 \
     camera.disable_treble=true
 
+# Charger
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.charger.enable_suspend=true
+
 # Dalvik heap
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \

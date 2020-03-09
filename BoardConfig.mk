@@ -17,6 +17,9 @@
 
 LOCAL_PATH := device/xiaomi/dior
 
+# Build
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 

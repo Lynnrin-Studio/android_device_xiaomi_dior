@@ -36,23 +36,29 @@
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 
-void property_override(char const prop[], char const value[])
+void property_override_dual(char const system_prop[],
+        char const vendor_prop[], char const value[])
 {
-    prop_info *pi;
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
+void property_override(char const prop[], char const value[], bool add = true)
+{
+    auto pi = (prop_info *) __system_property_find(prop);
+
+    if (pi != nullptr) {
         __system_property_update(pi, value, strlen(value));
-    else
+    } else if (add) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
+    }
 }
 
 void vendor_load_properties()
 {
     // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
+    property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
     std::string platform = GetProperty("ro.board.platform", "");
     if (platform != "msm8226")
         return;

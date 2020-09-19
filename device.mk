@@ -292,10 +292,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# RIL shim
+PRODUCT_PACKAGES += \
+    libaudioclient_shim
+
 # Protobuf
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v28/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v28.so
-
 
 # Seccomp
 PRODUCT_COPY_FILES += \

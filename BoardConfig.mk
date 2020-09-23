@@ -128,6 +128,7 @@ TARGET_NO_RPC := true
 # HIDL
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_dior

@@ -155,8 +155,8 @@ PRODUCT_PACKAGES += \
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl.legacy \
-    android.hardware.gnss@1.0-service.legacy
+    android.hardware.gnss@1.0-impl.dior \
+    android.hardware.gnss@1.0-service.dior
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

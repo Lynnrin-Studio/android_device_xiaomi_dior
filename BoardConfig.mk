@@ -180,6 +180,9 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     /firmware \
     /persist
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2016-10-01
+
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy

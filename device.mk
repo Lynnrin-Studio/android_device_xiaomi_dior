@@ -354,10 +354,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.usb.id.ums=ff20 \
     ro.usb.id.ums_adb=ff28
 
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mk.build.vendor_security_patch=2016-10-01
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service.lineage

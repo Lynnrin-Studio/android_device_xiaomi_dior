@@ -31,9 +31,3 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := HM NOTE 1LTE
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-# Build fingerprint
-BUILD_FINGERPRINT="Xiaomi/dior/dior:4.4.4/KTU84P/V9.2.4.0.KHICNEK:user/release-keys"
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="dior-user 4.4.4 KTU84P V9.2.4.0.KHICNEK release-keys"

@@ -178,13 +178,12 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)/releasetools
 
 BOARD_ROOT_EXTRA_FOLDERS := \
     /firmware \
-    /persist \
-    /tombstones
+    /persist
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy-minimal
+#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy-minimal
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

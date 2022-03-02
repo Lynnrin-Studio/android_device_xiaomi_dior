@@ -26,6 +26,9 @@ PRODUCT_AAPT_PREBUILT_DPI := xhdpi 280dpi hdpi tvdpi mdpi ldpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 19
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := \

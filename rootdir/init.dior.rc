@@ -130,6 +130,9 @@ on boot
     chown system camera /sys/class/leds/torch-light/brightness
     chmod 0666 /sys/class/leds/torch-light/brightness
 
+    # Set button brightness to 130
+    write /sys/class/leds/button-backlight/max_brightness 130
+
     # Switch to interactive and let PowerHAL configure it
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"

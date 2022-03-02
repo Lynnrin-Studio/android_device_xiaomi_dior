@@ -58,6 +58,7 @@ const char KEY_QC_MORPHO_HDR[] = "morpho-hdr";
 const char KEY_QC_ZSL[] = "zsl";
 const char FOCUS_MODE_MANUAL_POSITION[] = "manual";
 const char WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
+const char KEY_QC_SNAPSHOT_HDR[] = "snapshot-hdr";
 
 static struct hw_module_methods_t camera_module_methods = {
     .open = camera_device_open
@@ -124,7 +125,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
 #endif
 
     /* Remove HDR mode in front camera */
-    if (id == 1) {
+    if (id == 0 || id == 1) {
         params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES,
             "auto,asd,landscape,snow,beach,sunset,night,portrait,backlight,sports,steadyphoto,flowers,candlelight,fireworks,party,night-portrait,theatre,action,AR");
     }
@@ -175,6 +176,9 @@ static char *camera_fixup_setparams(int id, const char *settings)
     if (hdrMode && !videoMode) {
         params.set(android::CameraParameters::KEY_FLASH_MODE, android::CameraParameters::FLASH_MODE_OFF);
     }
+
+    /* Disable Snapshot HDR unconditionally */
+        params.set(KEY_QC_SNAPSHOT_HDR, "off");
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);

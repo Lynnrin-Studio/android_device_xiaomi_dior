@@ -59,6 +59,7 @@ const char KEY_QC_ZSL[] = "zsl";
 const char FOCUS_MODE_MANUAL_POSITION[] = "manual";
 const char WHITE_BALANCE_MANUAL_CCT[] = "manual-cct";
 const char KEY_QC_SNAPSHOT_HDR[] = "snapshot-hdr";
+const char KEY_SUPPORTED_WHITE_BALANCE[] = "whitebalance-values";
 
 static struct hw_module_methods_t camera_module_methods = {
     .open = camera_device_open
@@ -179,6 +180,10 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     /* Disable Snapshot HDR unconditionally */
         params.set(KEY_QC_SNAPSHOT_HDR, "off");
+
+    /* Set correct white balance */
+        params.set(KEY_SUPPORTED_WHITE_BALANCE,
+            "auto,incandescent,fluorescent,warm-fluorescent,daylight,cloudy-daylight,twilight,shade");
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
